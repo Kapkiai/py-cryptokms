@@ -1,0 +1,11 @@
+include docs/authors.rst
+include docs/contributing.rst
+include docs/history.rst
+include LICENSE
+include README.rst
+include requirements.txt
+
+recursive-include py_crypto *
+recursive-exclude * *.py[co]
+
+recursive-include docs *.rst conf.py Makefile make.bat
