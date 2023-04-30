@@ -1,8 +1,14 @@
 import logging
+import os
+
 from py_crypto.kms import StepKMSProvider
 
 log = logging.getLogger(__name__)
-step_kms = StepKMSProvider()
+
+# set this in case service is behind proxy
+os.environ['HTTP_PROXY'] = ''
+os.environ['HTTPS_PROXY'] = ''
+step_kms = StepKMSProvider(kms_base_url='https://localhost', kms_username='kms', kms_password='kms')
 
 
 # Just for testing invalid keys

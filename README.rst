@@ -19,7 +19,7 @@ Python example::
     from py_crypto.kms import StepKMSProvider
     from py_crypto.crypto import AESCBCCipher
 
-    step_kms = StepKMSProvider()
+    step_kms = StepKMSProvider(kms_base_url='https://localhost', kms_username='kms', kms_password='kms')
 
     aes = AESCBCCipher(kms_provider=step_kms)
 
