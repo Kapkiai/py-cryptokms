@@ -44,11 +44,17 @@ class StepKMSProvider(KMSProvider):
             session = requests.Session()
             # TODO: Look for a way to disable this
             session.verify = False
-            response = session.get(url=self.key_url, params={'id': key_identifier, 'username': 'hive'}, timeout=300)
+            response = session.get(url=self.key_url, auth=(self.kms_username, self.kms_password),
+                                   params={'id': key_identifier, 'username': 'hive'}, timeout=300)
+            if response.status_code != 200:
+                raise ValueError(f"Could not retrieve key from kms. "
+                                 f"Key might not be existing or user `hive` isn't authorized. "
+                                 f"Status code [{response.status_code}], "
+                                 f"Message [{response.content.decode('utf-8')}]")
             kms_res = response.json()
+            # TODO: catch all responses well i.e when key is not found, server error when kms is unreachable
             return kms_res['key']
         except Exception as e:
-            self.log.error('Could not retrieve key from kms due to %s', e)
             raise e
 
 
