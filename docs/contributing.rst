@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Nipyapi could always use more documentation, whether as part of the
-official Nipyapi docs, in docstrings, or even on the web in blog posts,
+Py-Crypto could always use more documentation, whether as part of the
+official Py-Crypto docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback

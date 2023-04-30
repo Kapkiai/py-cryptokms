@@ -7,7 +7,7 @@ Simple Cryptographic Library With Key Management Server Integration
 Quick Start
 -----------
 
-The easiest way to install NiPyApi is with pip::
+The easiest way to install PyCrypto is with pip::
 
     # in bash
     pip install pycryptokms
